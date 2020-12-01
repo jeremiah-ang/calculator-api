@@ -8,10 +8,6 @@ const app = express();
 app.use(cors());
 
 app.get('/', (req, res, next) => {
-    return res.send('Hello!');
-});
-
-app.get('/calculator', (req, res, next) => {
     const { equation } = req.query;
     if (!equation) return next(createError(400, 'Missing "equation" Query String'));
     let result;

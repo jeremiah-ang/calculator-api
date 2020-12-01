@@ -1,42 +1,42 @@
 @host = http://localhost:3000
-@path = /calculator
+@path = /
 
 ### Single +; Expected 2
 
-GET http://localhost:3000/calculator?equation=1%2B1 HTTP/1.1
+GET http://localhost:3000/?equation=1%2B1 HTTP/1.1
 
 ### Single + with negative number; Expected 3
 
-GET http://localhost:3000/calculator?equation=4%2B-1 HTTP/1.1
+GET http://localhost:3000/?equation=4%2B-1 HTTP/1.1
 
 ### Single -; Expected 0
 
-GET http://localhost:3000/calculator?equation=1-1 HTTP/1.1
+GET http://localhost:3000/?equation=1-1 HTTP/1.1
 
 ### Single -; Expected -1
 
-GET http://localhost:3000/calculator?equation=0-1 HTTP/1.1
+GET http://localhost:3000/?equation=0-1 HTTP/1.1
 
 ### Single *; Expected 0
 
-GET http://localhost:3000/calculator?equation=1*0 HTTP/1.1
+GET http://localhost:3000/?equation=1*0 HTTP/1.1
 
 ### Single *; Expected 99
 
-GET http://localhost:3000/calculator?equation=9*11 HTTP/1.1
+GET http://localhost:3000/?equation=9*11 HTTP/1.1
 
 ### Single /; Expected 11
 
-GET http://localhost:3000/calculator?equation=99/9 HTTP/1.1
+GET http://localhost:3000/?equation=99/9 HTTP/1.1
 
 ### Single /; Expected Error
 
-GET http://localhost:3000/calculator?equation=99/0 HTTP/1.1
+GET http://localhost:3000/?equation=99/0 HTTP/1.1
 
 ### controversial
 
-GET http://localhost:3000/calculator?equation=8/2(2%2B2) HTTP/1.1
+GET http://localhost:3000/?equation=8/2(2%2B2) HTTP/1.1
 
 ### exponential
 
-GET http://localhost:3000/calculator?equation=8^-2 HTTP/1.1
+GET http://localhost:3000/?equation=8^-2 HTTP/1.1
