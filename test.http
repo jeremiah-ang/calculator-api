@@ -32,3 +32,11 @@ GET http://localhost:3000/calculator?equation=99/9 HTTP/1.1
 ### Single /; Expected Error
 
 GET http://localhost:3000/calculator?equation=99/0 HTTP/1.1
+
+### controversial
+
+GET http://localhost:3000/calculator?equation=8/2(2%2B2) HTTP/1.1
+
+### exponential
+
+GET http://localhost:3000/calculator?equation=8^-2 HTTP/1.1
