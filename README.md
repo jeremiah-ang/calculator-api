@@ -2,8 +2,8 @@
 
 ## API - Examples
 
--   https://jeremiah-ang-tools.herokuapp.com?equation=8/2(2%2B2)
--   https://jeremiah-ang-tools.herokuapp.com?equation=8^-2
+-   https://simple-calculator-api.herokuapp.com?equation=8/2(2%2B2)
+-   https://simple-calculator-api.herokuapp.com?equation=8^-2
 
 ## Support Operators
 
