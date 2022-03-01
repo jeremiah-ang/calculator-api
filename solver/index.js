@@ -2,7 +2,7 @@ const Stack = require('../data_structure/stack');
 const Rational = require('../data_structure/rational');
 
 class EquationSolver {
-    constructor(stmt, { decimal }) {
+    constructor(stmt, { decimal } = {}) {
         this.result;
         this.error = false;
         if (this.isValidEquation(stmt)) {
