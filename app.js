@@ -13,7 +13,7 @@ app.get('/', (req, res, next) => {
     let result;
     try {
         const solution = new EquationSolver(equation);
-        result = solution.result.pop();
+        result = solution.result;
         if (solution.error) {
             console.log(result);
             return next(createError(400, result));
@@ -24,7 +24,7 @@ app.get('/', (req, res, next) => {
         }
         throw error;
     }
-    return res.status(200).json({ result: result.q / result.d });
+    return res.status(200).json({ result });
 });
 
 app.use((req, res, next) => {

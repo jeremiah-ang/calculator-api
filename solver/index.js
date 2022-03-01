@@ -1,12 +1,17 @@
-const Stack = require('./stack');
-const Rational = require('./rational');
+const Stack = require('../data_structure/stack');
+const Rational = require('../data_structure/rational');
 
 class EquationSolver {
-    constructor(stmt) {
+    constructor(stmt, { decimal }) {
         this.result;
         this.error = false;
         if (this.isValidEquation(stmt)) {
-            this.result = this.solve(this.infixToPostfix(stmt.split('').join(' ').trim()));
+            const solutionStack = this.solve(this.infixToPostfix(stmt.split('').join(' ').trim()));
+            const solution = solutionStack.pop();
+            this.result = solution.q / solution.d;
+            if (decimal || decimal === 0) {
+                this.result = this.result.toFixed(decimal);
+            }
         } else {
             this.error = true;
         }
@@ -241,9 +246,7 @@ class EquationSolver {
         return EquationSolver.ERROR(`No input!`);
     }
     static ERROR(msg) {
-        const s = new Stack();
-        s.add(msg);
-        return s;
+        return msg;
     }
 }
 
